@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <label for="num1">Enter first number:</label>
+<input type="number" id="num1" name="num1" placeholder="Enter first number">
+
+<label for="operator">Enter operator:</label>
+<input type="text" id="oper" name="operator" placeholder="Enter operator">
+
+<label for="num2">Enter second number:</label>
+<input type="number" id="num2" name="num2" placeholder="Enter second number">
+
+<button id="btn">Calculate</button>
+
+<div id="result"></div>
+
+<script>
+  const btn = document.getElementById("btn");
+
+  btn.addEventListener("click", function(event) {
+    
+    let numOne = parseFloat(document.getElementById("num1").value);
+    let numTwo = parseFloat(document.getElementById("num2").value);
+    let operation = document.getElementById("oper").value.trim();
+
+    let result = "";
+
+    
+    if (operation === "+") {
+      result = numOne + numTwo;
+    } else if (operation === "-") {
+      result = numOne - numTwo;
+    } else if (operation === "*") {
+      result = numOne * numTwo;
+    } else if (operation === "/") {
+      result = numOne / numTwo;
+    } else {
+      result = "Invalid operator";
+    }
+
+    
+    document.getElementById("result").innerHTML = `Result: ${result}`;
+  });
+</script>
+
+</body>
+</html>
